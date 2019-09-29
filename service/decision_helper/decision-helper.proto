@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "DecisionHelperProto";
+
+package decision_helper;
+
+// The Decision service definition.
+service DecisionHelper {
+    // Returns topics
+    rpc GetTopics (TopicsRequest) returns (TopicsReply) {}
+    rpc GetDecisionsForTopic(DecisionsRequest) returns (DecisionsReply) {}
+}
+
+// The Topics Request
+message TopicsRequest {
+}
+
+// The response message containing the greetings
+message TopicsReply {
+    repeated string topics = 1;
+}
+
+// The response message containing the decisions for a topic
+message DecisionsRequest {
+    string topic = 1;
+}
+
+// The response message containing the decisions for a topic
+message DecisionsReply {
+    repeated string decisions = 1;
+}
