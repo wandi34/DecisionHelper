@@ -1,0 +1,8 @@
+<mat-card
+  class="decision"
+  (swipeleft)="onSwipeLeft($event)"
+  (swiperight)="onSwipeRight($event)"
+>
+  <mat-card-title class="decision__title">{{ title }}</mat-card-title>
+  <mat-card-content class="decision__text">{{ text }}</mat-card-content>
+</mat-card>

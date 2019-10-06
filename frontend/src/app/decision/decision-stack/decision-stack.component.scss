@@ -1,0 +1,22 @@
+.stack {
+  display: stack;
+  grid-template-rows: 100%;
+  height: 100%;
+
+  &__decision {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+
+    &.hot {
+      transition: left 0.5s;
+      left: -100%;
+    }
+
+    &.not {
+      transition: left 0.5s;
+      left: 100%;
+    }
+  }
+}

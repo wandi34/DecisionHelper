@@ -1,0 +1,39 @@
+<div class="stack" #decisionStack>
+  <app-decision-card
+    class="stack__decision"
+    *ngIf="decisionList.length > 1"
+    [title]="decisionList[1].topic"
+    [text]="decisionList[1].text"
+  ></app-decision-card>
+  <app-decision-card
+    class="stack__decision"
+    *ngIf="decisionList.length > 0"
+    [title]="decisionList[0].topic"
+    [text]="decisionList[0].text"
+    (decided)="onDecided($event)"
+    [ngClass]="{
+      hot: decisionList[0].hot === true,
+      not: decisionList[0].hot === false
+    }"
+  ></app-decision-card>
+
+  <!-- <mat-card
+    class="decision next"
+    *ngIf="decisionList.length > 1"
+    [ngStyle]="{ 'margin-top': headerHeight + 'px' }"
+  >
+    <mat-card-title>{{ decisionList[1].topic }}</mat-card-title>
+    <mat-card-content class="content">{{
+      decisionList[1].text
+    }}</mat-card-content>
+  </mat-card> -->
+
+  <!-- <mat-card
+    class="decision empty"
+    [ngStyle]="{
+      'margin-top': decisionList.length >= 1 ? headerHeight + 'px' : 0
+    }"
+  >
+    <mat-card-content class="content">Everything done! 👏</mat-card-content>
+  </mat-card> -->
+</div>
